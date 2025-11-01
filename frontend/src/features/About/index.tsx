@@ -98,21 +98,18 @@ const About: React.FC = () => {
 
                   <div className='bg-purple-50 p-4 rounded-lg'>
                     <h4 className='font-semibold text-gray-800 mb-2'>
-                      For Admins & Rapid Response Teams
+                      For Admins
                     </h4>
                     <ul className='list-disc list-inside text-gray-600 space-y-1 text-sm'>
-                      <li>
-                        Verify ICE alerts to confirm accuracy and build trust
-                      </li>
                       <li>
                         Manage user access and permissions through invite codes
                       </li>
                       <li>View all canvas markers and organizing activity</li>
                       <li>
-                        Coordinate rapid response to immigration enforcement
+                        Coordinate community organizing and mutual aid efforts
                       </li>
                       <li>
-                        Special "Rapid Response" verification for urgent alerts
+                        Access donation records and volunteer signup data
                       </li>
                     </ul>
                   </div>

@@ -232,7 +232,7 @@ const TemporaryMarkerWithRadius: React.FC<{
 
   return (
     <AdvancedMarker position={position}>
-      <div className='bg-green-600 text-white w-8 h-8 rounded-full shadow-lg border-2 border-white animate-pulse flex items-center justify-center'>
+      <div className='button-pink text-white w-8 h-8 rounded-full shadow-lg border-2 border-white animate-pulse flex items-center justify-center'>
         📍
       </div>
     </AdvancedMarker>
@@ -847,11 +847,11 @@ const CanvasPlanning: React.FC<CanvasPlanningProps> = () => {
         <div className='absolute top-4 left-4 bg-white/90 backdrop-blur border border-gray-200 rounded-lg shadow p-3 text-xs text-gray-700 z-10'>
           <div className='font-semibold mb-2'>Canvas Markers</div>
           <div className='flex items-center gap-2 mb-1'>
-            <div className='bg-green-500 w-4 h-4 rounded-full border-2 border-white shadow'></div>
+            <div className='bg-pink-400 w-4 h-4 rounded-full border-2 border-white shadow'></div>
             <span>Your active markers</span>
           </div>
           <div className='flex items-center gap-2 mb-1'>
-            <div className='bg-blue-500 w-4 h-4 rounded-full border-2 border-white shadow relative'>
+            <div className='bg-pink-500 w-4 h-4 rounded-full border-2 border-white shadow relative'>
               <span className='absolute -top-0.5 -right-0.5 w-2 h-2 bg-yellow-400 rounded-full border border-white'></span>
             </div>
             <span>You were invited</span>

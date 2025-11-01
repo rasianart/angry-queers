@@ -314,7 +314,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = () => {
             {user && user.user_type === 'admin' ? (
               <button
                 onClick={() => setShowAddEvent(true)}
-                className='button-pink text-white px-6 py-2 rounded-md hover:bg-green-600 transition-colors'
+                className='button-pink text-white px-6 py-2 rounded-md transition-colors'
               >
                 Add Event
               </button>
@@ -360,7 +360,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = () => {
               {user && user.user_type === 'admin' ? (
                 <button
                   onClick={() => setShowAddEvent(true)}
-                  className='button-pink text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors'
+                  className='button-pink text-white px-4 py-2 rounded-md transition-colors'
                 >
                   Be the first to add an event
                 </button>

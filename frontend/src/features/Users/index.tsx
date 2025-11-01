@@ -224,16 +224,10 @@ const Users: React.FC = () => {
                         className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                           user.user_type === 'admin'
                             ? 'bg-purple-100 text-purple-800'
-                            : user.user_type === 'rapid_response'
-                              ? 'bg-yellow-100 text-yellow-800'
-                              : 'bg-green-100 text-green-800'
+                            : 'bg-green-100 text-green-800'
                         }`}
                       >
-                        {user.user_type === 'rapid_response'
-                          ? 'Rapid Response'
-                          : user.user_type === 'admin'
-                            ? 'Admin'
-                            : 'Basic'}
+                        {user.user_type === 'admin' ? 'Admin' : 'Basic'}
                       </span>
                     </td>
                     <td className='px-6 py-4 whitespace-nowrap'>
@@ -266,7 +260,6 @@ const Users: React.FC = () => {
                           className='text-sm border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-500'
                         >
                           <option value='basic'>Basic</option>
-                          <option value='rapid_response'>Rapid Response</option>
                           <option value='admin'>Admin</option>
                         </select>
                       )}
