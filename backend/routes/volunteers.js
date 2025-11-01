@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import pkg from "pg";
 import jwt from "jsonwebtoken";
+import { sendVolunteerSignupNotification } from "../utils/emailService.js";
 const { Pool } = pkg;
 
 const volunteerRouter = new Hono();
@@ -66,6 +67,14 @@ volunteerRouter.post("/api/volunteers/signup", async (c) => {
         data.accessibility_needs || null,
       ]
     );
+
+    // Send email notification
+    try {
+      await sendVolunteerSignupNotification(data);
+    } catch (emailError) {
+      console.error("Failed to send email notification:", emailError);
+      // Don't fail the request if email fails
+    }
 
     return c.json({
       success: true,
