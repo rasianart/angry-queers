@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { eventsRouter } from "./events.js";
-import { iceAlertsRouter } from "./iceAlerts.js";
 import { authRouter } from "./auth.js";
 import { adminRouter } from "./admin.js";
 import { invitesRouter } from "./invites.js";
@@ -18,7 +17,6 @@ export function buildApi() {
   api.route("/", invitesRouter);
   api.route("/", placesRouter);
   api.route("/", eventsRouter);
-  api.route("/", iceAlertsRouter);
   api.route("/", canvasRouter);
   api.route("/", blueskyRouter);
   api.route("/", instagramRouter);

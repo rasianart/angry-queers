@@ -13,9 +13,8 @@ const About: React.FC = () => {
           <div className='text-center mb-8'>
             <p className='text-lg text-gray-600 leading-relaxed'>
               Angry Queers is a community-driven platform designed to help organizers,
-              volunteers, and community members coordinate mutual aid, track
-              immigration enforcement activity, and build stronger networks of
-              care and protection.
+              volunteers, and community members coordinate mutual aid and build stronger 
+              networks of care and protection.
             </p>
           </div>
 
@@ -41,17 +40,6 @@ const About: React.FC = () => {
                 Angry Queers combines multiple tools into one integrated platform:
               </p>
               <div className='grid md:grid-cols-2 gap-4'>
-                <div className='bg-white p-4 rounded-lg border border-gray-200'>
-                  <h4 className='font-semibold text-gray-800 mb-1'>
-                    Alert System
-                  </h4>
-                  <p className='text-sm text-gray-600'>
-                    Report and track immigration enforcement activity in
-                    real-time. Admins and rapid response teams can verify alerts
-                    to help communities stay informed and safe.
-                  </p>
-                </div>
-
                 <div className='bg-white p-4 rounded-lg border border-gray-200'>
                   <h4 className='font-semibold text-gray-800 mb-1'>
                     Canvas Planning
@@ -87,10 +75,6 @@ const About: React.FC = () => {
                       For Community Members
                     </h4>
                     <ul className='list-disc list-inside text-gray-600 space-y-1 text-sm'>
-                      <li>
-                        Check for ICE alerts and immigration enforcement
-                        activity
-                      </li>
                       <li>Find and attend local organizing events</li>
                       <li>View canvas planning locations and activities</li>
                     </ul>
@@ -164,26 +148,13 @@ const About: React.FC = () => {
                         Explore the Platform
                       </p>
                       <p className='text-sm text-gray-600'>
-                        Browse canvas planning, events, and alerts in your
-                        community
+                        Browse canvas planning and events in your community
                       </p>
                     </div>
                   </div>
                   <div className='flex items-start gap-3'>
                     <span className='flex-shrink-0 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold'>
                       3
-                    </span>
-                    <div>
-                      <p className='text-gray-700 font-medium'>Stay Informed</p>
-                      <p className='text-sm text-gray-600'>
-                        Check the Alerts page for immigration enforcement
-                        activity
-                      </p>
-                    </div>
-                  </div>
-                  <div className='flex items-start gap-3'>
-                    <span className='flex-shrink-0 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold'>
-                      4
                     </span>
                     <div>
                       <p className='text-gray-700 font-medium'>Get Involved</p>
@@ -229,49 +200,17 @@ const About: React.FC = () => {
 
                   <details className='bg-white border border-gray-200 rounded-lg p-4'>
                     <summary className='font-semibold text-gray-800 cursor-pointer'>
-                      ICE Alert System & Verification
-                    </summary>
-                    <div className='mt-3 text-sm text-gray-600 space-y-2'>
-                      <p>
-                        Community members can report ICE activity including
-                        raids, checkpoints, and surveillance. Alerts include
-                        location, description, and optional photo evidence.
-                      </p>
-                      <p>
-                        Admins and Rapid Response users can verify alerts to
-                        increase trust. Verified alerts show with a red marker,
-                        while unverified appear yellow (visible only to
-                        privileged users). Rapid Response verifications are
-                        specially marked with a gold ring.
-                      </p>
-                      <p>
-                        Alerts automatically expire after their set duration to
-                        keep information current and relevant.
-                      </p>
-                    </div>
-                  </details>
-
-                  <details className='bg-white border border-gray-200 rounded-lg p-4'>
-                    <summary className='font-semibold text-gray-800 cursor-pointer'>
                       User Roles & Permissions
                     </summary>
                     <div className='mt-3 text-sm text-gray-600 space-y-2'>
                       <p>
-                        <strong>Basic Users:</strong> Can view verified alerts,
-                        attend events, and participate in canvas campaigns
-                        they're invited to.
-                      </p>
-                      <p>
-                        <strong>Rapid Response Users:</strong> Have all basic
-                        permissions plus the ability to verify ICE alerts and
-                        re-verify alerts already verified by others, marking
-                        them as Rapid Response verified.
+                        <strong>Basic Users:</strong> Can attend events and 
+                        participate in canvas campaigns they're invited to.
                       </p>
                       <p>
                         <strong>Admins:</strong> Full platform access including
                         user management, viewing all canvas markers (not just
-                        their own), managing invite codes, and moderating
-                        content.
+                        their own), and managing invite codes.
                       </p>
                     </div>
                   </details>

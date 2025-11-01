@@ -17,7 +17,7 @@ invitesRouter.post("/api/invites/create", async (c) => {
        RETURNING id, code, created_at`,
       [inviteCode, decoded.id]
     );
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3001";
     const inviteLink = `${frontendUrl}/?invite=${inviteCode}`;
     return c.json({ invite: result.rows[0], invite_link: inviteLink, message: "Invite link created successfully" });
   } catch (error) {

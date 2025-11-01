@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../../components/Logo';
 import { Link } from 'react-router-dom';
+import angryQueersLogo from '../../assets/angryqueers.webp';
 
 const Home: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Home: React.FC = () => {
       <div className='max-w-6xl mx-auto px-6 py-16'>
         <div className='text-center mb-16'>
           <div className='mb-2 flex justify-center'>
-            <Logo size={56} />
+            <img src={angryQueersLogo} alt='Angry Queers' className='h-24' />
           </div>
           <p className='text-lg text-gray-500 mb-6'>
             Resource Organization & Outreach Toolkit
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* Feature Cards */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16'>
+        <div className='grid md:grid-cols-2 gap-6 mb-16'>
           {/* Canvas */}
           <Link
             to='/canvas'
@@ -34,18 +34,6 @@ const Home: React.FC = () => {
             <p className='text-gray-600'>
               Coordinate neighborhood outreach by mapping canvassing areas with
               time-based coverage tracking.
-            </p>
-          </Link>
-
-          {/* Alerts */}
-          <Link
-            to='/alert'
-            className='bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-8 border-t-4 border-red-200'
-          >
-            <h3 className='text-xl font-semibold text-gray-800 mb-3'>Alerts</h3>
-            <p className='text-gray-600'>
-              View nearby ICE activity reports and, if logged in, submit new
-              alerts.
             </p>
           </Link>
 

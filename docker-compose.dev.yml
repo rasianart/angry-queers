@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: ${DB_USER:-no_chill_user}
       POSTGRES_DB: ${DB_NAME:-no_chill}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data_dev:/var/lib/postgresql/data
     healthcheck:
@@ -25,12 +25,12 @@ services:
       dockerfile: Dockerfile
     container_name: angryqueers-backend-dev
     ports:
-      - "5001:5001"
+      - "5002:5002"
     env_file:
       - ./backend/.env
     environment:
       - NODE_ENV=development
-      - PORT=5001
+      - PORT=5002
       - DB_HOST=postgres
     depends_on:
       postgres:
@@ -47,7 +47,7 @@ services:
     image: mkodockx/docker-clamav:alpine
     container_name: angryqueers-clamav
     ports:
-      - "3310:3310"
+      - "3311:3310"
     restart: unless-stopped
 
   frontend:
@@ -56,12 +56,12 @@ services:
       dockerfile: Dockerfile.dev
     container_name: angryqueers-frontend-dev
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
       - NODE_ENV=development
       - DOCKER=true
       - CLAMAV_HOST=clamav
-      - CLAMAV_PORT=3310
+      - CLAMAV_PORT=3311
       - SKIP_CLAMAV_ON_FAIL=true
     volumes:
       - ./frontend:/app

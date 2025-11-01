@@ -124,7 +124,7 @@ authRouter.get("/api/auth/google", async (c) => {
   const inviteCode = c.req.query("invite");
   const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?${new URLSearchParams({
     client_id: process.env.GOOGLE_CLIENT_ID,
-    redirect_uri: process.env.GOOGLE_CALLBACK_URL || "http://localhost:3000/api/auth/google/callback",
+    redirect_uri: process.env.GOOGLE_CALLBACK_URL || "http://localhost:3001/api/auth/google/callback",
     response_type: "code",
     scope: "openid email profile",
     access_type: "offline",
@@ -144,7 +144,7 @@ authRouter.get("/api/auth/google/callback", async (c) => {
       code,
       client_id: process.env.GOOGLE_CLIENT_ID,
       client_secret: process.env.GOOGLE_CLIENT_SECRET,
-      redirect_uri: process.env.GOOGLE_CALLBACK_URL || "http://localhost:3000/api/auth/google/callback",
+      redirect_uri: process.env.GOOGLE_CALLBACK_URL || "http://localhost:3001/api/auth/google/callback",
       grant_type: "authorization_code",
     });
     const { access_token } = tokenResponse.data;
@@ -199,7 +199,7 @@ authRouter.get("/api/auth/google/callback", async (c) => {
       process.env.JWT_SECRET || "your-secret-key",
       { expiresIn: "7d" }
     );
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3001";
     return c.redirect(`${frontendUrl}/?token=${token}`);
   } catch (error) {
     console.error("Google OAuth error:", error);

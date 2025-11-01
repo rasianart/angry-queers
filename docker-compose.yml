@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: ${DB_USER:-no_chill_user}
       POSTGRES_DB: ${DB_NAME:-no_chill}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -25,12 +25,12 @@ services:
       dockerfile: Dockerfile
     container_name: angryqueers-backend
     ports:
-      - "5001:5001"
+      - "5002:5002"
     env_file:
       - ./backend/.env
     environment:
       - NODE_ENV=production
-      - PORT=5001
+      - PORT=5002
       - DB_HOST=postgres
     depends_on:
       postgres:
@@ -43,7 +43,7 @@ services:
       dockerfile: Dockerfile
     container_name: angryqueers-frontend
     ports:
-      - "3000:80"
+      - "3001:80"
     depends_on:
       - backend
     restart: unless-stopped

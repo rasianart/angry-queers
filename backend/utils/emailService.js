@@ -79,7 +79,7 @@ export async function sendCanvasPartnerInvite({
         : "None specified";
 
     // Construct the app URL with marker ID
-    let appUrl = process.env.APP_URL || "http://localhost:3000";
+    let appUrl = process.env.APP_URL || "http://localhost:3001";
     // Ensure HTTPS for production URLs (not localhost)
     if (!appUrl.includes("localhost") && !appUrl.startsWith("https://")) {
       appUrl = appUrl.replace("http://", "https://");

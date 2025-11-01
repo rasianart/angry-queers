@@ -18,7 +18,7 @@ import { buildApi } from "./routes/index.js";
 const app = new Hono();
 //
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5002;
 
 // Get __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);

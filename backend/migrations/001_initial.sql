@@ -74,29 +74,4 @@ CREATE TABLE IF NOT EXISTS invite_links (
 CREATE INDEX IF NOT EXISTS idx_invite_links_code ON invite_links(code);
 CREATE INDEX IF NOT EXISTS idx_invite_links_used ON invite_links(is_used);
 
--- ICE Alerts table
-CREATE TABLE IF NOT EXISTS ice_alerts (
-    id SERIAL PRIMARY KEY,
-    latitude DECIMAL(10, 8) NOT NULL,
-    longitude DECIMAL(11, 8) NOT NULL,
-    location_description VARCHAR(500),
-    alert_type VARCHAR(50) NOT NULL, -- 'raiding', 'checkpoint', 'surveillance', 'other'
-    description TEXT,
-    image_url TEXT,
-    reported_at TIMESTAMP NOT NULL,
-    expires_at TIMESTAMP NOT NULL,
-    reported_by INTEGER REFERENCES users(id) ON DELETE SET NULL,
-    verified BOOLEAN DEFAULT FALSE,
-    verified_by INTEGER REFERENCES users(id) ON DELETE SET NULL,
-    verified_at TIMESTAMP,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Create indexes for ice_alerts
-CREATE INDEX IF NOT EXISTS idx_ice_alerts_expires_at ON ice_alerts(expires_at);
-CREATE INDEX IF NOT EXISTS idx_ice_alerts_verified ON ice_alerts(verified);
-CREATE INDEX IF NOT EXISTS idx_ice_alerts_reported_at ON ice_alerts(reported_at);
-CREATE INDEX IF NOT EXISTS idx_ice_alerts_location ON ice_alerts(latitude, longitude);
-
 

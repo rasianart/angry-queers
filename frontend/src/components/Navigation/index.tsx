@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { LoginModal } from '../LoginModal';
 import { UserMenu } from '../UserMenu';
-import Logo from '../Logo';
+import angryQueersLogo from '../../assets/angryqueers.svg';
 
 const Navigation: React.FC = () => {
   const location = useLocation();
@@ -44,14 +44,6 @@ const Navigation: React.FC = () => {
       label: 'Canvas',
       icon: '📍',
       requiresAuth: true,
-      adminOnly: false,
-      superAdminOnly: false,
-    },
-    {
-      path: '/alert',
-      label: 'Alert',
-      icon: '⚠️',
-      requiresAuth: false,
       adminOnly: false,
       superAdminOnly: false,
     },
@@ -115,7 +107,7 @@ const Navigation: React.FC = () => {
                   } ${item.path === '/' ? '-ml-3' : ''}`}
                 >
                   {item.path === '/' ? (
-                    <Logo size={22} />
+                    <img src={angryQueersLogo} alt='Angry Queers' className='h-8' />
                   ) : (
                     <span>{item.label}</span>
                   )}
@@ -144,7 +136,7 @@ const Navigation: React.FC = () => {
 
           {/* Mobile Logo/Brand */}
           <Link to='/' className='md:hidden flex items-center'>
-            <Logo size={22} />
+            <img src={angryQueersLogo} alt='Angry Queers' className='h-8' />
           </Link>
 
           {/* Mobile menu button */}

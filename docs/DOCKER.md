@@ -6,7 +6,7 @@ This document explains how to run the Angry Queers application using Docker.
 
 - Docker Desktop installed (or Docker Engine + Docker Compose)
 - Minimum 4GB RAM allocated to Docker
-- Ports 3000, 5001, and 5432 available
+- Ports 3001, 5002, and 5433 available
 
 ## Quick Start
 
@@ -18,15 +18,15 @@ docker-compose up --build
 
 This will:
 
-- Start PostgreSQL database on port 5432
-- Build and start the backend on port 5001
-- Build and start the frontend on port 3000
+- Start PostgreSQL database on port 5433
+- Build and start the backend on port 5002
+- Build and start the frontend on port 3001
 
 ### 2. Access the Application
 
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5001
-- Database: localhost:5432
+- Frontend: http://localhost:3001
+- Backend API: http://localhost:5002
+- Database: localhost:5433
 
 ### 3. Stop All Services
 
@@ -49,7 +49,7 @@ DB_NAME=noice
 DB_PORT=5432
 
 # Server Configuration
-PORT=5001
+PORT=5002
 
 # Google Maps API
 GOOGLE_MAPS_API_KEY=your_key_here
@@ -108,7 +108,7 @@ This will:
 ```bash
 cd backend
 docker build -t angryqueers-backend .
-docker run -p 5001:5001 --env-file .env angryqueers-backend
+docker run -p 5002:5002 --env-file .env angryqueers-backend
 ```
 
 ### Frontend Only
@@ -116,7 +116,7 @@ docker run -p 5001:5001 --env-file .env angryqueers-backend
 ```bash
 cd frontend
 docker build -t angryqueers-frontend .
-docker run -p 3000:80 angryqueers-frontend
+docker run -p 3001:80 angryqueers-frontend
 ```
 
 ## Troubleshooting
@@ -128,9 +128,9 @@ If you get a "port already in use" error:
 1. Find and stop the conflicting process:
 
    ```bash
-   lsof -i :5001  # For backend
-   lsof -i :3000  # For frontend
-   lsof -i :5432  # For database
+   lsof -i :5002  # For backend
+   lsof -i :3001  # For frontend
+   lsof -i :5433  # For database
    ```
 
 2. Or change the ports in `docker-compose.yml`

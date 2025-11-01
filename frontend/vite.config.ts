@@ -5,15 +5,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    port: 3001,
     host: '0.0.0.0',
     proxy: {
       '/api': {
         // Use backend service name in Docker, localhost for local dev
         target:
           process.env.DOCKER === 'true'
-            ? 'http://backend:5001'
-            : 'http://localhost:5001',
+            ? 'http://backend:5002'
+            : 'http://localhost:5002',
         changeOrigin: true,
       },
     },

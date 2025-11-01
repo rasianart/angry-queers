@@ -8,7 +8,6 @@ import Events from '../features/Events';
 import About from '../features/About';
 import Users from '../features/Users';
 import { Invites } from '../features/Invites';
-import Alerts from '../features/Alerts';
 import ErrorBoundary from '../components/ErrorBoundary';
 
 function App(): JSX.Element {
@@ -32,14 +31,6 @@ function App(): JSX.Element {
               element={
                 <ErrorBoundary>
                   <Events />
-                </ErrorBoundary>
-              }
-            />
-            <Route
-              path='alert'
-              element={
-                <ErrorBoundary>
-                  <Alerts />
                 </ErrorBoundary>
               }
             />

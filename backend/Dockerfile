@@ -12,7 +12,7 @@ RUN npm install --no-audit --no-fund
 COPY . .
 
 # Expose port
-EXPOSE 5001
+EXPOSE 5002
 
 # Start the application with migrations
 CMD ["sh", "-c", "npm run migrate && node server.js"]
