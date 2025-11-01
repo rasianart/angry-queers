@@ -1,0 +1,32 @@
+{
+  "name": "angry-queers",
+  "version": "1.0.0",
+  "description": "Angry Queers: Resource Organization & Outreach Toolkit - A community resource and mutual aid network for Chicago.",
+  "main": "index.js",
+  "scripts": {
+    "kill-all": "node killAll.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "docker:restart": "docker-compose -f docker-compose.dev.yml down && docker-compose -f docker-compose.dev.yml up -d",
+    "docker:up": "docker-compose -f docker-compose.dev.yml up -d",
+    "docker:down": "docker-compose -f docker-compose.dev.yml down",
+    "docker:recreate-postgres": "docker-compose -f docker-compose.dev.yml up -d --force-recreate postgres"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "express",
+    "google-maps"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.12.2"
+  }
+}

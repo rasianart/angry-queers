@@ -1,0 +1,61 @@
+.api-key-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.api-key-section form {
+  margin: 20px 0;
+}
+
+.api-key-note {
+  margin-top: 20px;
+  color: #666;
+}
+
+.api-key-note a {
+  color: #646cff;
+  text-decoration: none;
+}
+
+.api-key-note a:hover {
+  text-decoration: underline;
+}
+
+.map-section {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-section > div {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.map-section h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.map-section p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.server-status {
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  .api-key-note {
+    color: #333;
+  }
+
+  .server-status {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
