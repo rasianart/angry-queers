@@ -641,7 +641,7 @@ const CanvasPlanning: React.FC<CanvasPlanningProps> = () => {
             </p>
             <Link
               to='/'
-              className='inline-block button-green text-white px-6 py-3 rounded-md transition-colors font-medium'
+              className='inline-block button-pink text-white px-6 py-3 rounded-md transition-colors font-medium'
             >
               Return to Home
             </Link>
@@ -1008,7 +1008,7 @@ const CanvasPlanning: React.FC<CanvasPlanningProps> = () => {
                 <button
                   type='submit'
                   disabled={submitting}
-                  className='px-6 py-2 button-green text-white rounded-md font-medium disabled:opacity-50 focus:outline-none focus:ring-0'
+                  className='px-6 py-2 button-pink text-white rounded-md font-medium disabled:opacity-50 focus:outline-none focus:ring-0'
                 >
                   {submitting ? 'Creating Marker...' : 'Create Canvas Area'}
                 </button>
@@ -1261,7 +1261,7 @@ const CanvasPlanning: React.FC<CanvasPlanningProps> = () => {
                     alert(msg);
                   }
                 }}
-                className='px-6 py-2 button-green text-white rounded-md disabled:opacity-50'
+                className='px-6 py-2 button-pink text-white rounded-md disabled:opacity-50'
                 disabled={editState.saving}
               >
                 {editState.saving ? 'Saving...' : 'Save'}

@@ -6,7 +6,10 @@ interface LoginModalProps {
   redirectAfterLogin?: string;
 }
 
-export const LoginModal: React.FC<LoginModalProps> = ({ onClose, redirectAfterLogin }) => {
+export const LoginModal: React.FC<LoginModalProps> = ({
+  onClose,
+  redirectAfterLogin,
+}) => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -67,7 +70,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ onClose, redirectAfterLo
       } else {
         await login(email, password);
       }
-      
+
       // Check for redirect path
       const redirectPath = localStorage.getItem('redirectAfterLogin');
       if (redirectPath) {
@@ -109,7 +112,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ onClose, redirectAfterLo
           </h2>
           <button
             onClick={handleClose}
-            className='text-gray-500 hover:text-gray-700 button-green text-white'
+            className='text-gray-500 hover:text-gray-700 button-pink text-white'
           >
             ✕
           </button>
@@ -184,7 +187,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ onClose, redirectAfterLo
           <button
             type='submit'
             disabled={loading}
-            className='w-full button-green text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50'
+            className='w-full button-pink text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50'
           >
             {loading ? 'Loading...' : isSignUp ? 'Sign Up' : 'Log In'}
           </button>
@@ -229,7 +232,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ onClose, redirectAfterLo
         <div className='mt-4 text-center text-sm'>
           <button
             onClick={() => setIsSignUp(!isSignUp)}
-            className='button-green text-white'
+            className='button-pink text-white'
           >
             {isSignUp
               ? 'Already have an account? Log in'

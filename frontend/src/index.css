@@ -198,11 +198,11 @@ input[type='radio']:checked {
   background-color: #15803d !important;
 }
 
-.button-green {
-  background-color: rgb(21 128 61 / 61%);
+.button-pink {
+  background-color: rgb(226 83 193 / 61%);
 
   &:hover {
-    background-color: rgb(21 128 61 / 75%);
+    background-color: rgb(226 83 193 / 75%);
   }
 }
 
@@ -213,10 +213,10 @@ input[type='radio']:checked {
 }
 
 .nav-button-active {
-  background-color: rgb(21 128 61 / 25%);
+  background-color: rgb(226 83 193 / 25%);
 
   &:hover {
-    background-color: rgb(21 128 61 / 45%);
+    background-color: rgb(226 83 193 / 45%);
     color: white;
   }
 }

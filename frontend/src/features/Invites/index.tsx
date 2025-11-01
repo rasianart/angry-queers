@@ -24,7 +24,7 @@ export const Invites: React.FC = () => {
           <p className='text-gray-600 mb-6'>
             You must be logged in to manage invite links.
           </p>
-          <Link to='/' className='button-green text-white px-6 py-3 rounded-md'>
+          <Link to='/' className='button-pink text-white px-6 py-3 rounded-md'>
             Return Home
           </Link>
         </div>

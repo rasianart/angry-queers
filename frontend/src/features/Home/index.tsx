@@ -65,12 +65,11 @@ const Home: React.FC = () => {
           </p>
           <Link
             to='/about'
-            className='inline-block button-green text-white px-8 py-3 rounded-md transition-colors font-medium hover:text-white'
+            className='inline-block button-pink text-white px-8 py-3 rounded-md transition-colors font-medium hover:text-white'
           >
             Learn More About Our Mission
           </Link>
         </div>
-
       </div>
     </div>
   );

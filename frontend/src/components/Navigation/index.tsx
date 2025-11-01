@@ -107,7 +107,11 @@ const Navigation: React.FC = () => {
                   } ${item.path === '/' ? '-ml-3' : ''}`}
                 >
                   {item.path === '/' ? (
-                    <img src={angryQueersLogo} alt='Angry Queers' className='h-8' />
+                    <img
+                      src={angryQueersLogo}
+                      alt='Angry Queers'
+                      className='h-8'
+                    />
                   ) : (
                     <span>{item.label}</span>
                   )}
@@ -125,7 +129,7 @@ const Navigation: React.FC = () => {
                 ) : (
                   <button
                     onClick={() => setShowLoginModal(true)}
-                    className='px-4 py-2 button-green text-white rounded-md transition-colors'
+                    className='px-4 py-2 button-pink text-white rounded-md transition-colors'
                   >
                     Log In
                   </button>
@@ -144,14 +148,14 @@ const Navigation: React.FC = () => {
             {!loading && !user && (
               <button
                 onClick={() => setShowLoginModal(true)}
-                className='px-3 py-1.5 text-sm button-green text-white rounded-md mr-2'
+                className='px-3 py-1.5 text-sm button-pink text-white rounded-md mr-2'
               >
                 Log In
               </button>
             )}
             <button
               onClick={toggleMobileMenu}
-              className='inline-flex items-center justify-center p-2 rounded-md button-green text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500'
+              className='inline-flex items-center justify-center p-2 rounded-md button-pink text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500'
               aria-expanded='false'
             >
               <span className='sr-only'>Open main menu</span>

@@ -99,7 +99,7 @@ export const InviteManager: React.FC = () => {
         <button
           onClick={handleCreateInvite}
           disabled={creating}
-          className='button-green text-white px-4 py-2 rounded-md disabled:opacity-50'
+          className='button-pink text-white px-4 py-2 rounded-md disabled:opacity-50'
         >
           {creating ? 'Creating...' : '+ Create Invite Link'}
         </button>

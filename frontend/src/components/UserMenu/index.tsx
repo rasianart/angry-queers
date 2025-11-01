@@ -13,9 +13,9 @@ export const UserMenu: React.FC = () => {
         <div className='relative'>
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className='flex items-center space-x-2 text-gray-700 hover:text-white button-green text-white'
+            className='flex items-center space-x-2 text-gray-700 hover:text-white button-pink text-white'
           >
-            <div className='w-8 h-8 button-green rounded-full flex items-center justify-center text-white font-semibold'>
+            <div className='w-8 h-8 button-pink rounded-full flex items-center justify-center text-white font-semibold'>
               {user.display_name?.[0] || user.email[0].toUpperCase()}
             </div>
             <span className='hidden md:block'>
@@ -62,7 +62,7 @@ export const UserMenu: React.FC = () => {
                     setShowMenu(false);
                     navigate('/');
                   }}
-                  className='block w-full text-left px-4 py-2 text-sm button-green text-white rounded-none'
+                  className='block w-full text-left px-4 py-2 text-sm button-pink text-white rounded-none'
                 >
                   Log out
                 </button>

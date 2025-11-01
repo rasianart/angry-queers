@@ -99,17 +99,17 @@ GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 # Google OAuth (optional, for authentication)
 GOOGLE_CLIENT_ID=your_google_oauth_client_id
 GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
-GOOGLE_CALLBACK_URL=http://localhost:3000/api/auth/google/callback
+GOOGLE_CALLBACK_URL=http://localhost:3001/api/auth/google/callback
 
 # Frontend URL
-FRONTEND_URL=http://localhost:3000
+FRONTEND_URL=http://localhost:3001
 
 # Super Admin Emails (comma-separated)
 SUPERADMIN=your-email@gmail.com,another-admin@example.com
 
 # ClamAV Configuration (optional, for virus scanning)
 CLAMAV_HOST=clamav
-CLAMAV_PORT=3310
+CLAMAV_PORT=3311
 SKIP_CLAMAV_ON_FAIL=true
 ```
 
@@ -137,7 +137,7 @@ VITE_SUPERADMIN=your-email@gmail.com,another-admin@example.com
 2. **Google OAuth** (optional, for authentication):
    - In Google Cloud Console, go to "APIs & Services" > "Credentials"
    - Create OAuth 2.0 Client ID
-   - Set authorized redirect URI: `http://localhost:3000/api/auth/google/callback`
+   - Set authorized redirect URI: `http://localhost:3001/api/auth/google/callback`
    - Copy Client ID and Client Secret to `backend/.env`
 
 #### 4. Start Docker Containers
@@ -152,7 +152,7 @@ npm run docker:restart
 
 This will start:
 
-- **Frontend**: http://localhost:3000
+- **Frontend**: http://localhost:3001
 - **Backend API**: http://localhost:5001
 - **PostgreSQL**: localhost:5432
 - **ClamAV**: localhost:3310 (optional, for virus scanning)
@@ -231,10 +231,10 @@ GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 # Google OAuth (optional)
 GOOGLE_CLIENT_ID=your_google_oauth_client_id
 GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
-GOOGLE_CALLBACK_URL=http://localhost:3000/api/auth/google/callback
+GOOGLE_CALLBACK_URL=http://localhost:3001/api/auth/google/callback
 
 # Frontend URL
-FRONTEND_URL=http://localhost:3000
+FRONTEND_URL=http://localhost:3001
 
 # Super Admin Emails
 SUPERADMIN=your-email@gmail.com
@@ -273,7 +273,7 @@ npm run client
 
 This will start:
 
-- **Frontend**: http://localhost:3000
+- **Frontend**: http://localhost:3001
 - **Backend**: http://localhost:5001
 
 ## Available Scripts

@@ -110,7 +110,7 @@ const Users: React.FC = () => {
             </p>
             <Link
               to='/'
-              className='inline-block button-green text-white px-6 py-3 rounded-md transition-colors font-medium'
+              className='inline-block button-pink text-white px-6 py-3 rounded-md transition-colors font-medium'
             >
               Return to Home
             </Link>
@@ -140,7 +140,7 @@ const Users: React.FC = () => {
             <h3 className='text-lg text-red-600 mb-4'>{error}</h3>
             <Link
               to='/'
-              className='inline-block button-green text-white px-6 py-3 rounded-md transition-colors font-medium'
+              className='inline-block button-pink text-white px-6 py-3 rounded-md transition-colors font-medium'
             >
               Return to Home
             </Link>
@@ -225,15 +225,15 @@ const Users: React.FC = () => {
                           user.user_type === 'admin'
                             ? 'bg-purple-100 text-purple-800'
                             : user.user_type === 'rapid_response'
-                            ? 'bg-yellow-100 text-yellow-800'
-                            : 'bg-green-100 text-green-800'
+                              ? 'bg-yellow-100 text-yellow-800'
+                              : 'bg-green-100 text-green-800'
                         }`}
                       >
                         {user.user_type === 'rapid_response'
                           ? 'Rapid Response'
                           : user.user_type === 'admin'
-                          ? 'Admin'
-                          : 'Basic'}
+                            ? 'Admin'
+                            : 'Basic'}
                       </span>
                     </td>
                     <td className='px-6 py-4 whitespace-nowrap'>

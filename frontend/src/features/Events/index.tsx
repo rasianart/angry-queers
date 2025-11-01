@@ -314,7 +314,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = () => {
             {user && user.user_type === 'admin' ? (
               <button
                 onClick={() => setShowAddEvent(true)}
-                className='button-green text-white px-6 py-2 rounded-md hover:bg-green-600 transition-colors'
+                className='button-pink text-white px-6 py-2 rounded-md hover:bg-green-600 transition-colors'
               >
                 Add Event
               </button>
@@ -360,7 +360,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = () => {
               {user && user.user_type === 'admin' ? (
                 <button
                   onClick={() => setShowAddEvent(true)}
-                  className='button-green text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors'
+                  className='button-pink text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors'
                 >
                   Be the first to add an event
                 </button>
@@ -499,13 +499,13 @@ const EventsCalendar: React.FC<EventsCalendarProps> = () => {
                         href={`mailto:${getContactEmail(event)}?subject=${encodeURIComponent(
                           `Inquiry about ${event.title}`
                         )}`}
-                        className='px-4 py-2 button-green text-white rounded-md  transition-colors text-center'
+                        className='px-4 py-2 button-pink text-white rounded-md  transition-colors text-center'
                       >
                         Contact Organizer
                       </a>
                     ) : (
                       <button
-                        className='px-4 py-2 button-green text-white rounded-md cursor-not-allowed'
+                        className='px-4 py-2 button-pink text-white rounded-md cursor-not-allowed'
                         disabled
                         title='No contact email provided'
                       >
@@ -755,7 +755,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = () => {
                   <button
                     type='submit'
                     disabled={submitting}
-                    className='px-6 py-2 button-green text-white rounded-md font-medium disabled:opacity-50 focus:outline-none focus:ring-0'
+                    className='px-6 py-2 button-pink text-white rounded-md font-medium disabled:opacity-50 focus:outline-none focus:ring-0'
                   >
                     {submitting ? 'Creating Event...' : 'Create Event'}
                   </button>

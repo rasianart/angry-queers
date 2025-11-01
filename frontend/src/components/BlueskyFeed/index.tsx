@@ -114,7 +114,7 @@ const BlueskyFeed: React.FC = () => {
               onClick={() => handleSearchTypeChange('ice-sightings')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors shrink-0 ${
                 searchType === 'ice-sightings'
-                  ? 'button-green text-white'
+                  ? 'button-pink text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -124,7 +124,7 @@ const BlueskyFeed: React.FC = () => {
               onClick={() => handleSearchTypeChange('nullifie')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors shrink-0 ${
                 searchType === 'nullifie'
-                  ? 'button-green text-white'
+                  ? 'button-pink text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -134,7 +134,7 @@ const BlueskyFeed: React.FC = () => {
               onClick={() => handleSearchTypeChange('unraveled')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors shrink-0 ${
                 searchType === 'unraveled'
-                  ? 'button-green text-white'
+                  ? 'button-pink text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -144,7 +144,7 @@ const BlueskyFeed: React.FC = () => {
               onClick={() => handleSearchTypeChange('50501chicago')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors shrink-0 ${
                 searchType === '50501chicago'
-                  ? 'button-green text-white'
+                  ? 'button-pink text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -154,7 +154,7 @@ const BlueskyFeed: React.FC = () => {
               onClick={() => handleSearchTypeChange('libertyovergov')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors shrink-0 ${
                 searchType === 'libertyovergov'
-                  ? 'button-green text-white'
+                  ? 'button-pink text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
