@@ -5,7 +5,7 @@ import { ScrollToTop } from '../components/ScrollToTop';
 import Home from '../features/Home';
 import Canvas from '../features/Canvas';
 import Events from '../features/Events';
-import About from '../features/About';
+// import About from '../features/About';
 import Users from '../features/Users';
 import { Invites } from '../features/Invites';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -34,7 +34,7 @@ function App(): JSX.Element {
                 </ErrorBoundary>
               }
             />
-            <Route path='about' element={<About />} />
+            {/* <Route path='about' element={<About />} /> */}
             <Route path='users' element={<Users />} />
             <Route path='invites' element={<Invites />} />
           </Route>

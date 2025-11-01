@@ -55,14 +55,14 @@ const Navigation: React.FC = () => {
       adminOnly: false,
       superAdminOnly: false,
     },
-    {
-      path: '/about',
-      label: 'About',
-      icon: 'ℹ️',
-      requiresAuth: false,
-      adminOnly: false,
-      superAdminOnly: false,
-    },
+    // {
+    //   path: '/about',
+    //   label: 'About',
+    //   icon: 'ℹ️',
+    //   requiresAuth: false,
+    //   adminOnly: false,
+    //   superAdminOnly: false,
+    // },
     {
       path: '/users',
       label: 'Users',

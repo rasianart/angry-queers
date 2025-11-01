@@ -10,9 +10,9 @@ const __dirname = path.dirname(__filename);
 
 // Database configuration
 const pool = new Pool({
-  user: process.env.DB_USER || "no_chill_user",
+  user: process.env.DB_USER || "angry_queers_user",
   host: process.env.DB_HOST || "localhost",
-  database: process.env.DB_NAME || "no_chill",
+  database: process.env.DB_NAME || "angry_queers",
   password: process.env.DB_PASSWORD || "password",
   port: process.env.DB_PORT || 5432,
 });

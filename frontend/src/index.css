@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  /* Font System Variables */
-  --base-font-size: 16px;
-  --heading-font-font-family: 'futura-pt-bold';
+  /* Font System Variables - Matching angryqueers.com */
+  --base-font-size: 18px;
+  --heading-font-font-family: 'futura-pt-bold', 'futura-pt', sans-serif;
   --heading-font-font-style: normal;
   --heading-font-font-weight: 700;
   --heading-font-text-transform: none;
-  --heading-font-letter-spacing: -0.02em;
-  --heading-font-line-height: 1.2em;
-  --body-font-font-family: 'Lato';
+  --heading-font-letter-spacing: 0em;
+  --heading-font-line-height: 1.3em;
+  --body-font-font-family: 'Lato', sans-serif;
   --body-font-font-style: normal;
   --body-font-font-weight: 300;
   --body-font-text-transform: none;
   --body-font-letter-spacing: 0em;
-  --body-font-line-height: 1.5em;
+  --body-font-line-height: 1.6em;
 
   /* Apply body font as default */
   font-family:
@@ -244,14 +244,14 @@ button:hover {
   line-height: var(--body-font-line-height);
 }
 
-/* Heading sizes using the font system */
+/* Heading sizes using the font system - Matching angryqueers.com */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font-font-family), 'futura-pt-bold', sans-serif;
+  font-family: var(--heading-font-font-family);
   font-style: var(--heading-font-font-style);
   font-weight: var(--heading-font-font-weight);
   text-transform: var(--heading-font-text-transform);
@@ -259,7 +259,27 @@ h6 {
   line-height: var(--heading-font-line-height);
 }
 
-/* Body text elements */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+/* Body text elements - Matching angryqueers.com */
 p,
 span,
 div,
@@ -267,12 +287,23 @@ button,
 input,
 textarea,
 label {
-  font-family: var(--body-font-font-family), 'Lato', sans-serif;
+  font-family: var(--body-font-font-family);
   font-style: var(--body-font-font-style);
   font-weight: var(--body-font-font-weight);
   text-transform: var(--body-font-text-transform);
   letter-spacing: var(--body-font-letter-spacing);
   line-height: var(--body-font-line-height);
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Strong/bold text should use regular weight for Lato */
+strong,
+b {
+  font-weight: 400;
 }
 
 /* Custom scrollbar styles */

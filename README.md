@@ -82,8 +82,8 @@ Create a `backend/.env` file with the following:
 # Database Configuration (for Docker, DB_HOST should be 'postgres')
 DB_HOST=postgres
 DB_PORT=5432
-DB_NAME=no_chill
-DB_USER=no_chill_user
+DB_NAME=angry_queers
+DB_USER=angry_queers_user
 DB_PASSWORD=your_secure_password_here
 
 # Server Configuration
@@ -200,10 +200,10 @@ Install PostgreSQL locally and create a database:
 
 ```bash
 # Create database and user
-createdb no_chill
+createdb angry_queers
 # Or via psql:
-# CREATE DATABASE no_chill;
-# CREATE USER no_chill_user WITH PASSWORD 'your_password';
+# CREATE DATABASE angry_queers;
+# CREATE USER angry_queers_user WITH PASSWORD 'your_password';
 ```
 
 #### 3. Set Up Environment Variables
@@ -214,8 +214,8 @@ Create `backend/.env`:
 # Database Configuration
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=no_chill
-DB_USER=no_chill_user
+DB_NAME=angry_queers
+DB_USER=angry_queers_user
 DB_PASSWORD=your_password
 
 # Server Configuration
