@@ -525,6 +525,16 @@ const CanvasPlanning: React.FC<CanvasPlanningProps> = () => {
           throw new Error('Please log in to create canvas markers');
         }
 
+        // Combine date and time into a single ISO timestamp with timezone
+        const canvasDateTime = new Date(
+          formData.canvas_date.getFullYear(),
+          formData.canvas_date.getMonth(),
+          formData.canvas_date.getDate(),
+          formData.canvas_time.getHours(),
+          formData.canvas_time.getMinutes(),
+          formData.canvas_time.getSeconds()
+        );
+
         const response = await fetch('/api/canvas-markers', {
           method: 'POST',
           headers: {
@@ -536,6 +546,7 @@ const CanvasPlanning: React.FC<CanvasPlanningProps> = () => {
             longitude: selectedPosition.lng,
             canvas_date: formData.canvas_date.toISOString().split('T')[0], // YYYY-MM-DD format
             canvas_time: formData.canvas_time.toTimeString().split(' ')[0], // HH:MM:SS format
+            canvas_datetime_iso: canvasDateTime.toISOString(), // Full ISO timestamp with timezone
             duration_hours: formData.duration_hours,
             materials: formData.materials,
             notes: formData.notes,

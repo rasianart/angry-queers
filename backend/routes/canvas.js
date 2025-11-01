@@ -177,17 +177,30 @@ canvasRouter.post("/api/canvas-markers", async (c) => {
     }
 
     // Calculate expiration: canvas date/time + duration
-    const canvasDateTime = new Date(
-      `${markerData.canvas_date}T${markerData.canvas_time}`
-    );
+    // Use ISO timestamp if provided (includes timezone), otherwise fall back to date/time strings
+    let canvasDateTime;
+    if (markerData.canvas_datetime_iso) {
+      // Frontend sent ISO timestamp with timezone info - use it directly
+      canvasDateTime = new Date(markerData.canvas_datetime_iso);
+    } else {
+      // Fallback: parse date/time strings (will be interpreted in server's timezone)
+      canvasDateTime = new Date(
+        `${markerData.canvas_date}T${markerData.canvas_time}`
+      );
+    }
+    
     const expiresAt = new Date(
       canvasDateTime.getTime() + markerData.duration_hours * 60 * 60 * 1000
     );
+    
+    // Convert to UTC timestamp for PostgreSQL
+    // PostgreSQL NOW() returns UTC, so we need to store in UTC
+    const expiresAtUTC = expiresAt.toISOString();
 
     const result = await pool.query(
       `
       INSERT INTO canvas_markers (latitude, longitude, canvas_date, canvas_time, duration_hours, expires_at, created_by, materials, notes)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+      VALUES ($1, $2, $3, $4, $5, $6::timestamptz, $7, $8, $9)
       RETURNING id
     `,
       [
@@ -196,7 +209,7 @@ canvasRouter.post("/api/canvas-markers", async (c) => {
         markerData.canvas_date,
         markerData.canvas_time,
         markerData.duration_hours,
-        expiresAt,
+        expiresAtUTC,
         decoded.id,
         Array.isArray(markerData.materials) ? markerData.materials : null,
         markerData.notes || null,
