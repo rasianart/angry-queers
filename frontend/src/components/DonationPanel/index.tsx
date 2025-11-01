@@ -163,7 +163,7 @@ const DonationPanel: React.FC<DonationPanelProps> = ({ isOpen, onClose }) => {
           <div className='bg-gradient-to-r from-pink-500 to-purple-500 p-6 text-white relative'>
             <button
               onClick={onClose}
-              className='absolute top-4 right-4 text-white hover:text-gray-200 transition-colors'
+              className='absolute top-4 right-4 text-white hover:text-gray-200 transition-colors button-pink text-white'
               aria-label='Close'
             >
               <X size={24} />
