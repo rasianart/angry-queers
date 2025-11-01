@@ -152,9 +152,7 @@ const Home: React.FC = () => {
 
           <div className='text-center'>
             <a
-              href='https://forms.gle/your-signup-form-link'
-              target='_blank'
-              rel='noopener noreferrer'
+              href='/volunteer'
               className='inline-block button-pink text-white px-8 py-3 rounded-md transition-colors font-thin hover:text-white'
             >
               Sign Up to Volunteer

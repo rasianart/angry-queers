@@ -5,6 +5,7 @@ import { ScrollToTop } from '../components/ScrollToTop';
 import Home from '../features/Home';
 import Canvas from '../features/Canvas';
 import Events from '../features/Events';
+import VolunteerSignup from '../features/VolunteerSignup';
 // import About from '../features/About';
 import Users from '../features/Users';
 import { Invites } from '../features/Invites';
@@ -34,6 +35,7 @@ function App(): JSX.Element {
                 </ErrorBoundary>
               }
             />
+            <Route path='volunteer' element={<VolunteerSignup />} />
             {/* <Route path='about' element={<About />} /> */}
             <Route path='users' element={<Users />} />
             <Route path='invites' element={<Invites />} />

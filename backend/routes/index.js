@@ -8,6 +8,7 @@ import { instagramRouter } from "./instagram.js";
 import { blueskyRouter } from "./bluesky.js";
 import { healthRouter } from "./health.js";
 import { canvasRouter } from "./canvas.js";
+import volunteerRouter from "./volunteers.js";
 
 export function buildApi() {
   const api = new Hono();
@@ -18,6 +19,7 @@ export function buildApi() {
   api.route("/", placesRouter);
   api.route("/", eventsRouter);
   api.route("/", canvasRouter);
+  api.route("/", volunteerRouter);
   api.route("/", blueskyRouter);
   api.route("/", instagramRouter);
   return api;
