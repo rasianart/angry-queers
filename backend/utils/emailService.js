@@ -193,7 +193,7 @@ export async function sendVolunteerSignupNotification(formData) {
   }
 
   console.log(
-    "Attempting to send volunteer signup notification to: vmartin90@icloud.com"
+    "Attempting to send volunteer signup notification to: patricksegura@gmail.com"
   );
   console.log("Using:", sendgridConfigured ? "SendGrid API" : "SMTP");
 
@@ -373,7 +373,7 @@ Submitted at: ${new Date().toLocaleString("en-US", {
       </div>
     `;
 
-    const recipientEmail = "vmartin90@icloud.com";
+    const recipientEmail = "patricksegura@gmail.com";
 
     // Use SendGrid API if configured, otherwise fall back to SMTP
     if (sendgridConfigured) {

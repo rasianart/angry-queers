@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import angryQueersLogo from '../../assets/angryqueers.webp';
+import DonationPanel from '../../components/DonationPanel';
 
 const Home: React.FC = () => {
+  const [isDonationPanelOpen, setIsDonationPanelOpen] = useState(false);
+
   return (
     <div className='min-h-screen bg-gradient-to-b from-gray-50 to-white'>
       <div className='max-w-6xl mx-auto px-6 py-16'>
@@ -166,16 +169,20 @@ const Home: React.FC = () => {
           <p className='text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed'>
             Donate now to assist us in providing direct aid to our neighbors.
           </p>
-          <a
-            href='https://your-donation-link.com'
-            target='_blank'
-            rel='noopener noreferrer'
+          <button
+            onClick={() => setIsDonationPanelOpen(true)}
             className='inline-block button-pink text-white px-8 py-3 rounded-md transition-colors font-thin text-lg hover:text-white'
           >
             Donate Now
-          </a>
+          </button>
         </div>
       </div>
+
+      {/* Donation Panel */}
+      <DonationPanel
+        isOpen={isDonationPanelOpen}
+        onClose={() => setIsDonationPanelOpen(false)}
+      />
     </div>
   );
 };
