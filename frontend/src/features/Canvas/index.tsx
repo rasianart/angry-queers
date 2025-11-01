@@ -120,7 +120,7 @@ const CanvasMarkerWithRadius: React.FC<{
     const isExpired = new Date(marker.expiresAt) <= new Date();
 
     // Determine circle color based on marker status
-    let circleColor = '#10B981'; // Green-500 (default/active)
+    let circleColor = '#f472b6'; // Pink-400 (default/active) - magenta-pink
     if (isExpired) {
       circleColor = '#9CA3AF'; // Gray-400 (expired)
     } else if (
@@ -128,7 +128,7 @@ const CanvasMarkerWithRadius: React.FC<{
       marker.createdBy !== currentUserId &&
       marker.participants?.some(p => p.id === currentUserId)
     ) {
-      circleColor = '#3B82F6'; // Blue-500 (invited)
+      circleColor = '#ec4899'; // Pink-500 (invited) - darker magenta-pink
     }
 
     // Create a circle with 1 block radius (approximately 0.1 miles or 160 meters)
@@ -175,11 +175,11 @@ const CanvasMarkerWithRadius: React.FC<{
   const isExpired = new Date(marker.expiresAt) <= new Date();
 
   // Determine marker color based on status
-  let markerColor = 'bg-green-500 hover:bg-green-600'; // Default: your markers
+  let markerColor = 'bg-pink-400 hover:bg-pink-500'; // Default: your markers (magenta-pink)
   if (isExpired) {
     markerColor = 'bg-gray-400 hover:bg-gray-500'; // Expired
   } else if (wasInvited) {
-    markerColor = 'bg-blue-500 hover:bg-blue-600'; // Invited
+    markerColor = 'bg-pink-500 hover:bg-pink-600'; // Invited (darker magenta-pink)
   }
 
   return (
@@ -211,10 +211,10 @@ const TemporaryMarkerWithRadius: React.FC<{
 
     // Create a temporary circle with 1 block radius
     const newCircle = new google.maps.Circle({
-      strokeColor: '#059669', // Green-600
+      strokeColor: '#f472b6', // Pink-400 (magenta-pink)
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: '#059669', // Green-600
+      fillColor: '#f472b6', // Pink-400 (magenta-pink)
       fillOpacity: 0.15,
       map: map,
       center: position,
