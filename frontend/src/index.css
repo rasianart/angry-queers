@@ -208,7 +208,7 @@ input[type='radio']:checked {
 
 .nav-button {
   &:hover {
-    background-color: rgb(21 128 61 / 15%);
+    background-color: rgb(226 83 193 / 15%);
   }
 }
 
@@ -222,7 +222,7 @@ input[type='radio']:checked {
 }
 
 button:hover {
-  border-color: rgb(21 128 61 / 75%);
+  border-color: rgb(226 83 193 / 75%);
 }
 
 /* Font System Utility Classes */
