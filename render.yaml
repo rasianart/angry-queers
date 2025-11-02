@@ -16,7 +16,7 @@ services:
     region: oregon
     plan: starter
     buildCommand: npm install
-    startCommand: npm run migrate && node server.js
+    startCommand: node run-migrations.js && node server.js
     rootDir: backend
     healthCheckPath: /api/health
     envVars:
