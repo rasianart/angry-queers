@@ -306,7 +306,7 @@ const DonationPanel: React.FC<DonationPanelProps> = ({ isOpen, onClose }) => {
                         </div>
                         <button
                           onClick={() => setShowPaymentForm(false)}
-                          className='text-sm text-pink-600 hover:text-whitemt-2 button-pink text-white'
+                          className='text-sm text-pink-600 hover:text-pink-700 mt-2 button-pink text-white'
                         >
                           ← Change details
                         </button>
