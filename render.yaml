@@ -1,0 +1,93 @@
+services:
+  # PostgreSQL Database
+  - type: pserv
+    name: angry-queers-db
+    env: docker
+    plan: starter
+    region: oregon
+    databases:
+      - name: angry_queers
+        user: angry_queers_user
+
+  # Backend API Service
+  - type: web
+    name: angry-queers-backend
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm run migrate && node server.js
+    rootDir: backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5002
+      - key: DATABASE_URL
+        fromDatabase:
+          name: angry-queers-db
+          property: connectionString
+      - key: DB_HOST
+        fromDatabase:
+          name: angry-queers-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: angry-queers-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: angry-queers-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: angry-queers-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: angry-queers-db
+          property: password
+      - key: FRONTEND_URL
+        value: https://angry-queers.onrender.com
+      - key: APP_URL
+        value: https://angry-queers.onrender.com
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_CALLBACK_URL
+        value: https://angry-queers-backend.onrender.com/api/auth/google/callback
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: SENDGRID_FROM_EMAIL
+        value: noreply@angryqueers.com
+      - key: SUPER_ADMIN_EMAIL
+        value: patricksegura@gmail.com
+      - key: APP_NAME
+        value: Angry Queers
+
+  # Frontend Static Site
+  - type: web
+    name: angry-queers
+    env: static
+    region: oregon
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    rootDir: frontend
+    envVars:
+      - key: VITE_API_URL
+        value: https://angry-queers-backend.onrender.com
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://angry-queers-backend.onrender.com/api/*
+
