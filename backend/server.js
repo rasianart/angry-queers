@@ -24,8 +24,25 @@ const PORT = process.env.PORT || 5002;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middleware
-app.use("*", cors());
+// Middleware - CORS configuration
+const corsOrigins = [
+  process.env.FRONTEND_URL || "http://localhost:3001",
+  "http://localhost:3001",
+  "https://angry-queers.onrender.com",
+];
+
+app.use(
+  "*",
+  cors({
+    origin: (origin) => {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return true;
+      // Allow if origin is in our whitelist
+      return corsOrigins.some((allowed) => origin.startsWith(allowed));
+    },
+    credentials: true,
+  })
+);
 
 // Routes
 // Mount modular API routes
