@@ -16,7 +16,7 @@ interface StripeFormProps {
 const StripeForm: React.FC<StripeFormProps> = ({
   amount,
   email,
-  name,
+  name: _name, // Reserved for future use with billing details
   onSuccess,
   onError,
 }) => {
