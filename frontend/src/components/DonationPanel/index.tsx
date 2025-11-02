@@ -222,7 +222,7 @@ const DonationPanel: React.FC<DonationPanelProps> = ({ isOpen, onClose }) => {
                               onClick={() => handleAmountSelect(preset)}
                               className={`py-3 px-4 rounded-lg border-2 font-medium transition-all button-pink ${
                                 amount === preset
-                                  ? 'border-pink-500 bg-pink-50 text-pink-700'
+                                  ? 'border-pink-500 bg-pink-50 text-white'
                                   : 'border-gray-300 hover:border-pink-300 text-gray-700'
                               }`}
                             >
@@ -306,7 +306,7 @@ const DonationPanel: React.FC<DonationPanelProps> = ({ isOpen, onClose }) => {
                         </div>
                         <button
                           onClick={() => setShowPaymentForm(false)}
-                          className='text-sm text-pink-600 hover:text-pink-700 mt-2 button-pink text-white'
+                          className='text-sm text-pink-600 hover:text-whitemt-2 button-pink text-white'
                         >
                           ← Change details
                         </button>
