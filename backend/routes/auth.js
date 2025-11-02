@@ -139,7 +139,8 @@ authRouter.get("/api/auth/google/callback", async (c) => {
   try {
     const code = c.req.query("code");
     const inviteCode = c.req.query("state");
-    if (!code) return c.redirect("/?error=google_auth_failed");
+    const frontendUrl = (process.env.FRONTEND_URL || "http://localhost:3001").replace(/\/$/, '');
+    if (!code) return c.redirect(`${frontendUrl}/?error=google_auth_failed`);
     const tokenResponse = await axios.post("https://oauth2.googleapis.com/token", {
       code,
       client_id: process.env.GOOGLE_CLIENT_ID,
@@ -156,12 +157,12 @@ authRouter.get("/api/auth/google/callback", async (c) => {
     let user = await pool.query("SELECT * FROM users WHERE google_id = $1", [googleUser.id]);
     if (user.rows.length === 0) {
       if (!isSuperAdminEmail(googleUser.email)) {
-        if (!inviteCode) return c.redirect("/?error=invite_required");
+        if (!inviteCode) return c.redirect(`${frontendUrl}/?error=invite_required`);
         const inviteCheck = await pool.query(
           "SELECT * FROM invite_links WHERE code = $1 AND is_used = FALSE",
           [inviteCode]
         );
-        if (inviteCheck.rows.length === 0) return c.redirect("/?error=invalid_invite");
+        if (inviteCheck.rows.length === 0) return c.redirect(`${frontendUrl}/?error=invalid_invite`);
       }
       const user_type = isSuperAdminEmail(googleUser.email) ? "admin" : "basic";
       const result = await pool.query(
@@ -199,11 +200,11 @@ authRouter.get("/api/auth/google/callback", async (c) => {
       process.env.JWT_SECRET || "your-secret-key",
       { expiresIn: "7d" }
     );
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3001";
     return c.redirect(`${frontendUrl}/?token=${token}`);
   } catch (error) {
     console.error("Google OAuth error:", error);
-    return c.redirect("/?error=google_auth_failed");
+    const frontendUrl = (process.env.FRONTEND_URL || "http://localhost:3001").replace(/\/$/, '');
+    return c.redirect(`${frontendUrl}/?error=google_auth_failed`);
   }
 });
 
