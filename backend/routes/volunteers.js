@@ -1,18 +1,9 @@
 import { Hono } from "hono";
-import pkg from "pg";
 import jwt from "jsonwebtoken";
 import { sendVolunteerSignupNotification } from "../utils/emailService.js";
-const { Pool } = pkg;
+import pool from "../config/database.js";
 
 const volunteerRouter = new Hono();
-
-const pool = new Pool({
-  user: process.env.DB_USER || "angry_queers_user",
-  host: process.env.DB_HOST || "localhost",
-  database: process.env.DB_NAME || "angry_queers",
-  password: process.env.DB_PASSWORD || "password",
-  port: process.env.DB_PORT || 5432,
-});
 
 // Public route - Submit volunteer signup form
 volunteerRouter.post("/api/volunteers/signup", async (c) => {
