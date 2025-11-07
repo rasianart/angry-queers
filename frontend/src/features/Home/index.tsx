@@ -164,7 +164,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* Donate Section */}
-        <div className='bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg p-8 text-center border-2 border-pink-300'>
+        {/* <div className='bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg p-8 text-center border-2 border-pink-300'>
           <h2 className='text-3xl font-thin text-gray-900 mb-4'>Donate</h2>
           <p className='text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed'>
             Donate now to assist us in providing direct aid to our neighbors.
@@ -175,7 +175,7 @@ const Home: React.FC = () => {
           >
             Donate Now
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Donation Panel */}
