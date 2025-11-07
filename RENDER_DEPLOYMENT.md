@@ -94,11 +94,9 @@ GOOGLE_MAPS_API_KEY=<your-google-maps-api-key>
 STRIPE_SECRET_KEY=<your-stripe-secret-key>
 STRIPE_PUBLISHABLE_KEY=<your-stripe-publishable-key>
 
-# SendGrid (for emails)
-SENDGRID_API_KEY=<your-sendgrid-api-key>
-SENDGRID_FROM_EMAIL=noreply@angryqueers.com
-SMTP_USER=<optional-if-not-using-sendgrid>
-SMTP_PASS=<optional-if-not-using-sendgrid>
+# Resend (for emails)
+RESEND_API_KEY=<your-resend-api-key>
+RESEND_FROM_EMAIL=noreply@angryqueers.com
 
 # Admin Email (your email for admin access)
 SUPER_ADMIN_EMAIL=patricksegura@gmail.com
